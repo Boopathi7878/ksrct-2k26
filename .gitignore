@@ -1,0 +1,7 @@
+
+
+# Ignore CSV files
+*.csv
+
+# Ignore large datasets
+CICD2017.csv
