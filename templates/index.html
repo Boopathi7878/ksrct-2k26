@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Cyberattack Detection Bot</title>
+    <style>
+        body {
+            font-family: Arial;
+            margin: 40px;
+            background: #f4f6f8;
+        }
+        h1 {
+            color: #333;
+        }
+        .box {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0px 0px 10px rgba(0,0,0,0.1);
+        }
+        button {
+            padding: 10px 20px;
+            background: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+        }
+        table {
+            width: 100%;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+
+<body>
+
+<h1>🛡️ Self Learning Cyberattack Detection Bot</h1>
+
+<div class="box">
+
+<form method="POST" enctype="multipart/form-data">
+    <input type="file" name="file" required>
+    <button type="submit">Upload & Detect</button>
+</form>
+
+{% if attack_count or normal_count %}
+    <h3>Results</h3>
+    <p><b>Detected Attacks:</b> {{ attack_count }}</p>
+    <p><b>Normal Traffic:</b> {{ normal_count }}</p>
+{% endif %}
+
+{% if result %}
+    {{ result|safe }}
+{% endif %}
+
+</div>
+
+</body>
+</html>
